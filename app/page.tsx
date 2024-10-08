@@ -9,19 +9,23 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+const SECTIONS = [
+  Header,
+  About,
+  Skills,
+  Educations,
+  // Projects,
+  Experiences,
+  // Contact,
+  Footer,
+];
+
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
-      <main className="container mx-auto px-4 py-8">
-        <About />
-        <Skills />
-        <Educations />
-        <Experiences />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-background text-foreground px-8 container mx-auto py-8">
+      {SECTIONS.map((Section, index) => (
+        <Section key={index} />
+      ))}
     </div>
   );
 }

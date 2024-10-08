@@ -11,30 +11,36 @@ export default function About() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="mb-12"
+      className="mb-8 sm:mb-12 md:mb-16 py-8 sm:py-10 md:py-12"
     >
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="md:w-1/2 mb-6 md:mb-0">
-          <h1 className="text-4xl font-bold mb-2">Vincent Eskenazi</h1>
-          <h2 className="text-2xl text-muted-foreground mb-4">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10 lg:gap-16">
+        <div className="w-full lg:w-2/3 xl:w-3/4 text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3 md:mb-4">
+            Vincent Eskenazi
+          </h1>
+          <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-4 sm:mb-5 md:mb-6">
             Développeur Full Stack JavaScript
           </h2>
-          <p className="mb-4">
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto lg:mx-0">
             Ancien Ingénieur Nucléaire reconverti en Développeur Full Stack
             JavaScript avec une passion pour la résolution de problèmes
             complexes et la création d&apos;applications performantes.
           </p>
-          <Button>
-            <Download className="mr-2 h-4 w-4" /> Télécharger CV
+          <Button size="lg" className="text-base sm:text-lg">
+            <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />{" "}
+            Télécharger CV
           </Button>
         </div>
-        <div className="md:w-1/3">
-          <Avatar className="w-48 h-48">
+        <div className="w-full lg:w-1/3 xl:w-1/4 flex justify-center mb-6 lg:mb-0">
+          <Avatar className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
             <AvatarImage
               src="/images/vincent-eskenazi.jpg"
               alt="Vincent Eskenazi"
+              className="object-cover"
             />
-            <AvatarFallback>VE</AvatarFallback>
+            <AvatarFallback className="text-2xl sm:text-3xl md:text-4xl">
+              VE
+            </AvatarFallback>
           </Avatar>
         </div>
       </div>
