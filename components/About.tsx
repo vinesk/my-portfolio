@@ -25,8 +25,13 @@ export default function About() {
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto lg:mx-0">
             {about.description}
           </p>
-          <Button size="lg" className="text-base sm:text-lg">
-            <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />{" "}
+          <Button
+            size="lg"
+            className="text-base sm:text-lg"
+            onClick={() => window.open(about.cvUrl, "_blank")}
+            aria-label="Télécharger le CV de Vincent Eskenazi"
+          >
+            <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
             Télécharger CV
           </Button>
         </div>

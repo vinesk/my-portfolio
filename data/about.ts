@@ -5,6 +5,7 @@ interface About {
   avatarSrc: string;
   avatarAlt: string;
   avatarFallback: string;
+  cvUrl: string;
 }
 
 export const about: About = {
@@ -15,4 +16,5 @@ export const about: About = {
   avatarSrc: "/images/vincent-eskenazi.jpg",
   avatarAlt: "Vincent Eskenazi",
   avatarFallback: "VE",
+  cvUrl: "/documents/cv-vincent-eskenazi.pdf",
 };
