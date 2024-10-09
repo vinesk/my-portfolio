@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { experiences, Experience } from "@/data/experiences";
 import { Badge } from "@/components/ui/badge";
-import { ChevronRight } from "lucide-react";
 
 export default function Experiences() {
   return (
@@ -47,7 +46,7 @@ function ExperienceItem({
           className="rounded-full"
         />
       </div>
-      <div className="border-l border-gray-200 pl-8 pb-6">
+      <div className="border-l border-gray-200 pl-8 pb-3">
         <h3 className="text-xl font-bold">{experience.title}</h3>
         <p className="text-lg font-medium text-gray-600">
           {experience.company}
@@ -57,21 +56,13 @@ function ExperienceItem({
           <Badge variant="default">{experience.type}</Badge>
         </div>
         <p className="text-base mb-4">{experience.description}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-2">
           {experience.skills.map((skill, skillIndex) => (
             <Badge key={skillIndex} variant="secondary">
               {skill}
             </Badge>
           ))}
         </div>
-        <a
-          href={experience.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium flex items-center hover:underline text-blue-600"
-        >
-          En savoir plus <ChevronRight className="ml-1 h-4 w-4" />
-        </a>
       </div>
     </motion.div>
   );

@@ -16,7 +16,7 @@ const SECTIONS = [
   Educations,
   // Projects,
   Experiences,
-  // Contact,
+  Contact,
   Footer,
 ];
 
