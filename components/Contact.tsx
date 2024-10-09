@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { Phone, Mail, MapPin, Github, Linkedin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -65,7 +65,7 @@ export default function Contact() {
                 <Input type="text" placeholder="Nom" className="w-full" />
                 <Input type="email" placeholder="Email" className="w-full" />
                 <Textarea placeholder="Message" className="w-full" />
-                <Button type="submit" className="w-full sm:w-auto">
+                <Button type="submit" className="w-full">
                   Envoyer
                 </Button>
               </form>

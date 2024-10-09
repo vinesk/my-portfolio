@@ -39,8 +39,8 @@ const NavItems = ({
     { name: "À propos", id: "about" },
     { name: "Compétences", id: "skills" },
     { name: "Projets", id: "projects" },
-    { name: "Formations", id: "educations" },
     { name: "Expériences", id: "experiences" },
+    { name: "Formations", id: "educations" },
     { name: "Contact", id: "contact" },
   ];
 

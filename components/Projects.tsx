@@ -10,37 +10,10 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "Projet 1",
-      description:
-        "Une application full-stack mettant en valeur l'intégration de React et Node.js. Ce projet démontre un design responsive et une gestion efficace des données.",
-      image: "/images/project1.jpg",
-      skills: ["React", "Node.js", "MongoDB"],
-      previewLink: "https://project1.com",
-      codeLink: "https://github.com/yourusername/project1",
-    },
-    {
-      title: "Projet 2",
-      description:
-        "Une application mobile multi-plateforme développée avec React Native. Elle propose des mises à jour en temps réel et une expérience utilisateur fluide sur iOS et Android.",
-      image: "/images/project2.jpg",
-      skills: ["React Native", "Firebase"],
-      previewLink: "https://project2.com",
-      codeLink: "https://github.com/yourusername/project2",
-    },
-    {
-      title: "Projet 3",
-      description:
-        "Une application web moderne construite avec Next.js et TypeScript. Ce projet met en avant les capacités de rendu côté serveur et de génération de sites statiques.",
-      image: "/images/project3.jpg",
-      skills: ["TypeScript", "Next.js", "Tailwind CSS"],
-      previewLink: "https://project3.com",
-      codeLink: "https://github.com/yourusername/project3",
-    },
-  ];
+  const defaultImage = "/images/default-project.jpg";
 
   return (
     <motion.section
@@ -56,31 +29,52 @@ export default function Projects() {
           <Card key={index} className="flex flex-col">
             <div className="relative h-48 md:h-64">
               <Image
-                src={project.image}
+                src={project.image || defaultImage}
                 alt={project.title}
+                title={
+                  project.image
+                    ? project.title
+                    : "Photo par Rahul Mishra sur Unsplash"
+                }
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover rounded-t-lg"
+                priority
               />
             </div>
             <CardContent className="flex-grow flex flex-col justify-between p-6">
               <div>
-                <CardTitle className="mb-2">{project.title}</CardTitle>
-                <CardDescription className="mb-4">
+                <CardTitle className="mb-2 text-lg md:text-xl font-bold">
+                  {project.title}
+                </CardTitle>
+                <CardDescription className="mb-4 text-base md:text-md">
                   {project.description}
                 </CardDescription>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary">
+                    <Badge
+                      key={skillIndex}
+                      variant="secondary"
+                      className="text-sm md:text-base"
+                    >
                       {skill}
                     </Badge>
                   ))}
                 </div>
               </div>
               <div className="flex justify-end space-x-2">
-                <Button variant="outline" size="sm">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-sm md:text-base"
+                >
                   <ExternalLink className="mr-2 h-4 w-4" /> Aperçu
                 </Button>
-                <Button variant="outline" size="sm">
+                <Button
+                  variant="default"
+                  size="sm"
+                  className="text-sm md:text-base"
+                >
                   <Code className="mr-2 h-4 w-4" /> Code
                 </Button>
               </div>

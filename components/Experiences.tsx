@@ -53,12 +53,18 @@ function ExperienceItem({
         </p>
         <div className="flex items-center gap-2 mt-1 mb-2">
           <p className="text-sm text-gray-500">{experience.duration}</p>
-          <Badge variant="default">{experience.type}</Badge>
+          <Badge variant="default" className="text-sm md:text-base">
+            {experience.type}
+          </Badge>
         </div>
         <p className="text-base mb-4">{experience.description}</p>
         <div className="flex flex-wrap gap-2 mb-2">
           {experience.skills.map((skill, skillIndex) => (
-            <Badge key={skillIndex} variant="secondary">
+            <Badge
+              key={skillIndex}
+              variant="secondary"
+              className="text-sm md:text-base"
+            >
               {skill}
             </Badge>
           ))}

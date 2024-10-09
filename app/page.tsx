@@ -13,9 +13,9 @@ const SECTIONS = [
   Header,
   About,
   Skills,
-  Educations,
-  // Projects,
+  Projects,
   Experiences,
+  Educations,
   Contact,
   Footer,
 ];
