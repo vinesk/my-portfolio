@@ -57,7 +57,13 @@ function ExperienceItem({
             {experience.type}
           </Badge>
         </div>
-        <p className="text-base mb-4">{experience.description}</p>
+        <ul className="list-disc pl-5 text-base mb-4">
+          {experience.description.map((item, index) => (
+            <li key={index} className="pl-1 mb-2">
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
         <div className="flex flex-wrap gap-2 mb-2">
           {experience.skills.map((skill, skillIndex) => (
             <Badge
