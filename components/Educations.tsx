@@ -49,12 +49,12 @@ function EducationCard({ education }: { education: Education }) {
             {education.degree}
           </CardTitle>
         </div>
-        <CardDescription className="text-base sm:text-lg">
+        <CardDescription className="text-base sm:text-lg font-bold">
           {education.institution}
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm font-medium text-muted-foreground mb-3">
+        <p className="text-sm sm:text-base font-medium text-muted-foreground mb-3">
           {education.duration}
         </p>
         <p className="text-sm sm:text-base leading-relaxed">

@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { contact } from "@/data/contact";
 
 export default function Contact() {
   return (
@@ -25,34 +26,34 @@ export default function Contact() {
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <Phone className="mr-2 h-4 w-4" />
-                  <span>(+33) 6 25 41 20 74</span>
+                  <span>{contact.phone}</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="mr-2 h-4 w-4" />
-                  <span>vinesk.dev@gmail.com</span>
+                  <span>{contact.email}</span>
                 </li>
                 <li className="flex items-center">
                   <MapPin className="mr-2 h-4 w-4" />
-                  <span>84 quai de Jemmapes, 75010 Paris</span>
+                  <span>{contact.address}</span>
                 </li>
                 <li className="flex items-center">
                   <Linkedin className="mr-2 h-4 w-4" />
                   <Link
-                    href="https://linkedin.com/in/vinesk"
+                    href={contact.linkedin.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    linkedin.com/in/vinesk
+                    {contact.linkedin.url.replace("https://", "")}
                   </Link>
                 </li>
                 <li className="flex items-center">
                   <Github className="mr-2 h-4 w-4" />
                   <Link
-                    href="https://github.com/vinesk"
+                    href={contact.github.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    github.com/vinesk
+                    {contact.github.url.replace("https://", "")}
                   </Link>
                 </li>
               </ul>

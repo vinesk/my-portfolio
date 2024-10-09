@@ -28,4 +28,25 @@ export const educations: Education[] = [
     description: "2 ans de spécialisation",
     icon: "universite-grenoble-alpes.jpg",
   },
+  {
+    degree: "Master Ingénierie Nucléaire",
+    institution: "Université Grenoble Alpes",
+    duration: "09/2012 - 08/2014",
+    description: "2 ans de spécialisation",
+    icon: "universite-grenoble-alpes.jpg",
+  },
+  {
+    degree: "Master Ingénierie Nucléaire",
+    institution: "Université Grenoble Alpes",
+    duration: "09/2012 - 08/2014",
+    description: "2 ans de spécialisation",
+    icon: "universite-grenoble-alpes.jpg",
+  },
+  {
+    degree: "Master Ingénierie Nucléaire",
+    institution: "Université Grenoble Alpes",
+    duration: "09/2012 - 08/2014",
+    description: "2 ans de spécialisation",
+    icon: "universite-grenoble-alpes.jpg",
+  },
 ];

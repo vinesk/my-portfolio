@@ -35,4 +35,13 @@ export const projects: Project[] = [
     previewLink: "https://project3.com",
     codeLink: "https://github.com/yourusername/project3",
   },
+  {
+    title: "Projet 3",
+    description:
+      "Une application web moderne construite avec Next.js et TypeScript. Ce projet met en avant les capacités de rendu côté serveur et de génération de sites statiques.",
+    // image: "/images/project3.jpg",
+    skills: ["TypeScript", "Next.js", "Tailwind CSS"],
+    previewLink: "https://project3.com",
+    codeLink: "https://github.com/yourusername/project3",
+  },
 ];
