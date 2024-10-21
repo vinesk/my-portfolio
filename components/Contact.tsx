@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { contact } from "@/data/contact";
+import { toast } from "sonner";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -35,18 +36,18 @@ export default function Contact() {
       if (response.ok) {
         const data = await response.json();
         console.log("Réponse du serveur:", data);
-        alert("Message envoyé avec succès !");
+        toast.success("Message envoyé avec succès !");
         setName("");
         setEmail("");
         setMessage("");
       } else {
         const errorData = await response.json();
         console.error("Erreur du serveur:", errorData);
-        alert(`Erreur lors de l'envoi du message: ${errorData.message}`);
+        toast.error(`Erreur lors de l'envoi du message: ${errorData.message}`);
       }
     } catch (error) {
       console.error("Erreur:", error);
-      alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
+      toast.error("Une erreur s'est produite. Veuillez réessayer plus tard.");
     }
 
     setIsSubmitting(false);
