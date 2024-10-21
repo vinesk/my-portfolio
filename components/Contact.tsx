@@ -33,12 +33,16 @@ export default function Contact() {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        console.log("Réponse du serveur:", data);
         alert("Message envoyé avec succès !");
         setName("");
         setEmail("");
         setMessage("");
       } else {
-        alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+        const errorData = await response.json();
+        console.error("Erreur du serveur:", errorData);
+        alert(`Erreur lors de l'envoi du message: ${errorData.message}`);
       }
     } catch (error) {
       console.error("Erreur:", error);
