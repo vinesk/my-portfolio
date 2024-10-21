@@ -17,8 +17,9 @@ function useSmallScreen(breakpoint: number) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   useEffect(() => {
-    const checkScreenSize = () =>
+    const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth < breakpoint);
+    };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
@@ -27,13 +28,16 @@ function useSmallScreen(breakpoint: number) {
   return isSmallScreen;
 }
 
-// Composant de navigation extrait
-const NavItems = ({
-  activeSection,
-  scrollToSection,
-}: {
+// Typage des props pour NavItems
+interface NavItemsProps {
   activeSection: string;
   scrollToSection: (sectionId: string) => void;
+}
+
+// Composant de navigation extrait
+const NavItems: React.FC<NavItemsProps> = ({
+  activeSection,
+  scrollToSection,
 }) => {
   const navItems = [
     { name: "À propos", id: "about" },
@@ -60,7 +64,10 @@ const NavItems = ({
   );
 };
 
-export default function Header() {
+// Typage des props pour Header
+interface HeaderProps {}
+
+const Header: React.FC<HeaderProps> = () => {
   const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("about");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -81,46 +88,32 @@ export default function Header() {
     setMobileMenuOpen(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveSection(section.id);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="flex h-14 items-center justify-between">
+      <div className="flex h-14 items-center justify-between px-4">
         <div className="flex items-center">
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
-                onClick={() => setMobileMenuOpen(true)}
-                aria-label="Ouvrir le menu"
-              >
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="pr-0">
-              <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
-              <SheetDescription className="sr-only">
-                Liste des sections du site
-              </SheetDescription>
-              <MobileLink
-                href="/"
-                className="flex items-center"
-                onOpenChange={setMobileMenuOpen}
-              >
-                <span className="font-bold text-xl">VE</span>
-              </MobileLink>
-              <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-                <div className="flex flex-col space-y-1">
-                  <NavItems
-                    activeSection={activeSection}
-                    scrollToSection={scrollToSection}
-                  />
-                </div>
-              </ScrollArea>
-            </SheetContent>
-          </Sheet>
-          <span className="font-bold text-xl mr-4 hidden lg:inline-block">
-            VE
-          </span>
+          <span className="font-bold text-xl mr-4">VE</span>
           {!isSmallScreen && (
             <nav className="flex items-center space-x-2 text-sm font-medium">
               <NavItems
@@ -130,17 +123,47 @@ export default function Header() {
             </nav>
           )}
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          aria-label="Changer le thème"
-          className="mr-2"
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        >
-          <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        </Button>
+        <div className="flex items-center">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Changer le thème"
+            className="mr-2"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <Sun className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-6 w-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          </Button>
+          {isSmallScreen && (
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                  onClick={() => setMobileMenuOpen(true)}
+                  aria-label="Ouvrir le menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="pl-0">
+                <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
+                <SheetDescription className="sr-only">
+                  Liste des sections du site
+                </SheetDescription>
+                <div className="flex flex-col space-y-1 items-start px-4">
+                  <NavItems
+                    activeSection={activeSection}
+                    scrollToSection={scrollToSection}
+                  />
+                </div>
+              </SheetContent>
+            </Sheet>
+          )}
+        </div>
       </div>
     </header>
   );
-}
+};
+
+export default Header;

@@ -19,15 +19,11 @@ export const skills: Skill[] = [
     icon: "/icons/skills/javascript.svg",
   },
   {
-    name: "Node",
-    icon: "/icons/skills/node.svg",
+    name: "TypeScript",
+    icon: "/icons/skills/typescript.svg",
   },
   {
     name: "React",
-    icon: "/icons/skills/react.svg",
-  },
-  {
-    name: "React Native",
     icon: "/icons/skills/react.svg",
   },
   {
@@ -35,12 +31,28 @@ export const skills: Skill[] = [
     icon: "/icons/skills/redux.svg",
   },
   {
-    name: "TypeScript",
-    icon: "/icons/skills/typescript.svg",
+    name: "Next.js",
+    icon: "/icons/skills/nextjs.svg",
+  },
+  {
+    name: "Node",
+    icon: "/icons/skills/node.svg",
+  },
+  {
+    name: "Express",
+    icon: "/icons/skills/express.svg",
   },
   {
     name: "MongoDB",
     icon: "/icons/skills/mongodb.svg",
+  },
+  {
+    name: "React Native",
+    icon: "/icons/skills/react.svg",
+  },
+  {
+    name: "Expo",
+    icon: "/icons/skills/expo.svg",
   },
   {
     name: "Git",

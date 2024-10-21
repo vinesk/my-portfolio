@@ -10,9 +10,9 @@ interface About {
 
 export const about: About = {
   name: "Vincent Eskenazi",
-  title: "Développeur Full Stack JavaScript",
+  title: "Développeur Web (Full Stack MERN)",
   description:
-    "Ancien Ingénieur Nucléaire reconverti en Développeur Full Stack JavaScript avec une passion pour la résolution de problèmes complexes et la création d'applications performantes.",
+    "Ancien Ingénieur Nucléaire reconverti en Développeur Web avec une passion pour la résolution de problèmes complexes et la création d'applications performantes.",
   avatarSrc: "/images/vincent-eskenazi.jpg",
   avatarAlt: "Vincent Eskenazi",
   avatarFallback: "VE",

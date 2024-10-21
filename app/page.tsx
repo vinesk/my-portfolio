@@ -22,7 +22,7 @@ const SECTIONS = [
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background text-foreground px-8 container mx-auto py-8">
+    <div className="min-h-screen bg-background text-foreground px-8 container mx-auto">
       {SECTIONS.map((Section, index) => (
         <Section key={index} />
       ))}

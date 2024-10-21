@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,45 @@ import { Phone, Mail, MapPin, Github, Linkedin } from "lucide-react";
 import { contact } from "@/data/contact";
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          to: "vinesk.dev@gmail.com",
+        }),
+      });
+
+      if (response.ok) {
+        alert("Message envoyé avec succès !");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <motion.section
       id="contact"
@@ -62,12 +101,36 @@ export default function Contact() {
               <h3 className="text-xl font-semibold mb-4">
                 Envoyez-moi un message
               </h3>
-              <form className="space-y-4">
-                <Input type="text" placeholder="Nom" className="w-full" />
-                <Input type="email" placeholder="Email" className="w-full" />
-                <Textarea placeholder="Message" className="w-full" />
-                <Button type="submit" className="w-full">
-                  Envoyer
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <Input
+                  type="text"
+                  placeholder="Nom"
+                  className="w-full"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  className="w-full"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <Textarea
+                  placeholder="Message"
+                  className="w-full"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                />
+                <Button
+                  type="submit"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Envoi en cours..." : "Envoyer"}
                 </Button>
               </form>
             </div>

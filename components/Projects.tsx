@@ -22,6 +22,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import { CarouselApi } from "@/components/ui/carousel";
+import { Eye, Code } from "lucide-react";
 
 export default function Projects() {
   const defaultImage = "/images/default-project.jpg";
@@ -136,7 +137,7 @@ function ProjectCard({
               asChild
             >
               <Link href={project.previewUrl} target="_blank">
-                <ExternalLink className="mr-2 h-4 w-4" /> Aperçu
+                <Eye className="h-4 w-4" /> Aperçu
               </Link>
             </Button>
           )}
@@ -148,7 +149,7 @@ function ProjectCard({
               asChild
             >
               <Link href={project.codeUrl} target="_blank">
-                <ExternalLink className="mr-2 h-4 w-4" /> Code
+                <Code className="h-4 w-4" /> Code
               </Link>
             </Button>
           )}
