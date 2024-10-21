@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
@@ -12,9 +12,28 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projects, Project } from "@/data/projects";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import { CarouselApi } from "@/components/ui/carousel";
 
 export default function Projects() {
   const defaultImage = "/images/default-project.jpg";
+  const [api, setApi] = useState<CarouselApi>();
+  const [emblaRef] = useEmblaCarousel();
+
+  useEffect(() => {
+    if (!api) return;
+  }, [api]);
+
+  const scrollPrev = () => api?.scrollPrev();
+  const scrollNext = () => api?.scrollNext();
 
   return (
     <motion.section
@@ -22,18 +41,38 @@ export default function Projects() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="mb-12"
+      className="mb-12 w-full"
     >
       <h2 className="text-2xl font-bold mb-6">Projets</h2>
       {projects.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              defaultImage={defaultImage}
-            />
-          ))}
+        <div className="relative w-full">
+          <div ref={emblaRef} className="w-full">
+            <Carousel setApi={setApi} className="w-full">
+              <CarouselContent>
+                {projects.map((project) => (
+                  <CarouselItem
+                    key={project.id}
+                    className="md:basis-1/2 lg:basis-1/3 pl-4"
+                  >
+                    <ProjectCard
+                      project={project}
+                      defaultImage={defaultImage}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden" />
+              <CarouselNext className="hidden" />
+            </Carousel>
+          </div>
+          <div className="flex justify-center mt-4 space-x-2">
+            <Button variant="outline" size="icon" onClick={scrollPrev}>
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button variant="outline" size="icon" onClick={scrollNext}>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
         </div>
       ) : (
         <p className="text-gray-500">
