@@ -11,44 +11,49 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  // {
-  //   id: uuidv4(),
-  //   title: "Projet 1",
-  //   description:
-  //     "Une application full-stack mettant en valeur l'intégration de React et Node.js. Ce projet démontre un design responsive et une gestion efficace des données.",
-  //   // image: "https://placehold.co/600x400",
-  //   skills: ["React", "Node.js", "MongoDB"],
-  //   previewUrl: "https://project1.com",
-  //   codeUrl: "https://github.com/yourusername/project1",
-  // },
-  // {
-  //   id: uuidv4(),
-  //   title: "Application de Gestion des Tâches",
-  //   description:
-  //     "Une application web moderne pour la gestion des tâches, utilisant Vue.js pour le frontend et Django pour le backend. Elle offre des fonctionnalités de tri, de filtrage et de collaboration en temps réel.",
-  //   // image: "https://placehold.co/600x400",
-  //   skills: ["Vue.js", "Django", "PostgreSQL", "WebSockets"],
-  //   previewUrl: "https://taskmanager.example.com",
-  //   codeUrl: "https://github.com/yourusername/task-manager",
-  // },
-  // {
-  //   id: uuidv4(),
-  //   title: "Portfolio Photographique",
-  //   description:
-  //     "Un site web élégant pour présenter un portfolio photographique, construit avec Gatsby pour des performances optimales. Il intègre une galerie dynamique et un système de gestion de contenu headless.",
-  //   // image: "https://placehold.co/600x400",
-  //   skills: ["Gatsby", "React", "GraphQL", "Contentful"],
-  //   previewUrl: "https://photo-portfolio.example.com",
-  //   codeUrl: "https://github.com/yourusername/photo-portfolio",
-  // },
-  // {
-  //   id: uuidv4(),
-  //   title: "API de Recommandation de Films",
-  //   description:
-  //     "Une API RESTful développée avec FastAPI qui utilise des algorithmes de machine learning pour recommander des films basés sur les préférences de l'utilisateur et l'historique de visionnage.",
-  //   // image: "https://placehold.co/600x400",
-  //   skills: ["FastAPI", "Python", "Machine Learning", "SQLAlchemy"],
-  //   previewUrl: "https://movie-api.example.com/docs",
-  //   codeUrl: "https://github.com/yourusername/movie-recommendation-api",
-  // },
+  {
+    id: uuidv4(),
+    title: "Hack a Tweet",
+    description:
+      "Hack a Tweet est une application web qui reproduit les principales fonctionnalités de Twitter. Les utilisateurs peuvent s'inscrire, se connecter, publier des tweets et interagir avec le contenu des autres utilisateurs.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/lacapsule-hackatweet-frontend/refs/heads/main/public/hackatweet.png",
+    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
+    previewUrl: "https://lacapsule-hackatweet-frontend.vercel.app/",
+    codeUrl: "https://github.com/vinesk/lacapsule-hackatweet-frontend",
+  },
+  {
+    id: uuidv4(),
+    title: "Morning News",
+    description:
+      "Morning News est une application web qui affiche les dernières actualités de TechCrunch via NewsAPI. Les utilisateurs peuvent s'inscrire, se connecter et sauvegarder leurs articles préférés.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/lacapsule-morningnews-frontend/refs/heads/main/public/morningnews.png",
+    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
+    previewUrl: "https://lacapsule-morningnews-frontend.vercel.app/",
+    codeUrl: "https://github.com/vinesk/lacapsule-morningnews-frontend",
+  },
+
+  {
+    id: uuidv4(),
+    title: "My Moviz",
+    description:
+      "My Moviz est une application web qui affiche les dernières sorties de films. Les utilisateurs peuvent ajouter des films à leurs favoris, gérer un compteur de vues et évaluer chaque film présenté.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/lacapsule-mymoviz-frontend/refs/heads/main/public/mymoviz.png",
+    skills: ["React", "Next.js", "Node.js", "Express"],
+    previewUrl: "https://lacapsule-mymoviz-frontend.vercel.app/",
+    codeUrl: "https://github.com/vinesk/lacapsule-mymoviz-frontend",
+  },
+  {
+    id: uuidv4(),
+    title: "Memory Game",
+    description:
+      "Memory Game est une application web React qui met en œuvre le jeu classique de correspondance de cartes. Les joueurs testent leur mémoire en retournant les cartes et en essayant de trouver les paires correspondantes.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/lacapsule-memorygame/refs/heads/main/public/memorygame.png",
+    skills: ["React", "Next.js"],
+    previewUrl: "https://lacapsule-memorygame.vercel.app/",
+    codeUrl: "https://github.com/vinesk/lacapsule-memorygame",
+  },
 ];

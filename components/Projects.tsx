@@ -25,7 +25,7 @@ import { CarouselApi } from "@/components/ui/carousel";
 import { Eye, Code } from "lucide-react";
 
 export default function Projects() {
-  const defaultImage = "/images/default-project.jpg";
+  const defaultImage = "/images/default.jpg";
   const [api, setApi] = useState<CarouselApi>();
   const [emblaRef] = useEmblaCarousel();
 
