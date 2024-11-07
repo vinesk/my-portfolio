@@ -13,6 +13,45 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: uuidv4(),
+    title: "Fashion E-Commerce",
+    description:
+      "Fashion E-Commerce est une application web complète qui permet aux utilisateurs de parcourir et d'acheter des vêtements en ligne, avec une interface d'administration dédiée.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/e-commerce-frontend/refs/heads/main/public/ecommerce.png",
+    skills: [
+      "React",
+      "Vite",
+      "Redux",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Tailwind CSS",
+    ],
+    previewUrl: "https://e-commerce-frontend-uydm.onrender.com/",
+    codeUrl: "https://github.com/vinesk/e-commerce-frontend",
+  },
+  {
+    id: uuidv4(),
+    title: "Banking App",
+    description:
+      "Banking App est une application web qui permet aux utilisateurs de connecter leurs comptes bancaires et d'effectuer des transferts d'argent en toute sécurité.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/banking/refs/heads/main/public/banking.png",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Appwrite",
+      "Plaid",
+      "Dwolla",
+      "Sentry",
+    ],
+    previewUrl: "https://vinesk-banking.vercel.app/",
+    codeUrl: "https://github.com/vinesk/banking",
+  },
+
+  {
+    id: uuidv4(),
     title: "Hack a Tweet",
     description:
       "Hack a Tweet est une application web qui reproduit les principales fonctionnalités de Twitter. Les utilisateurs peuvent s'inscrire, se connecter, publier des tweets et interagir avec le contenu des autres utilisateurs.",
