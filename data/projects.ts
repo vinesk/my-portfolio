@@ -13,23 +13,34 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: uuidv4(),
-    title: "Fashion E-Commerce",
+    title: "Morning News",
     description:
-      "Fashion E-Commerce est une application web complète qui permet aux utilisateurs de parcourir et d'acheter des vêtements en ligne, avec une interface d'administration dédiée.",
+      "Morning News est une application web qui affiche les dernières actualités de TechCrunch via NewsAPI. Les utilisateurs peuvent s'inscrire, se connecter et sauvegarder leurs articles préférés.",
     image:
-      "https://raw.githubusercontent.com/vinesk/e-commerce-frontend/refs/heads/main/public/ecommerce.png",
-    skills: [
-      "React",
-      "Vite",
-      "Redux",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Tailwind CSS",
-    ],
-    previewUrl: "https://e-commerce-frontend-uydm.onrender.com/",
-    codeUrl: "https://github.com/vinesk/e-commerce-frontend",
+      "https://raw.githubusercontent.com/vinesk/morning-news/refs/heads/main/frontend/public/morningnews.png",
+    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
+    previewUrl: "https://morning-news-vinesk.vercel.app/",
+    codeUrl: "https://github.com/vinesk/morning-news",
   },
+  // {
+  //   id: uuidv4(),
+  //   title: "Fashion E-Commerce",
+  //   description:
+  //     "Fashion E-Commerce est une application web complète qui permet aux utilisateurs de parcourir et d'acheter des vêtements en ligne, avec une interface d'administration dédiée.",
+  //   image:
+  //     "https://raw.githubusercontent.com/vinesk/e-commerce-frontend/refs/heads/main/public/ecommerce.png",
+  //   skills: [
+  //     "React",
+  //     "Vite",
+  //     "Redux",
+  //     "Node.js",
+  //     "Express",
+  //     "MongoDB",
+  //     "Tailwind CSS",
+  //   ],
+  //   previewUrl: "https://e-commerce-frontend-uydm.onrender.com/",
+  //   codeUrl: "https://github.com/vinesk/e-commerce-frontend",
+  // },
   {
     id: uuidv4(),
     title: "Banking App",
@@ -60,17 +71,6 @@ export const projects: Project[] = [
     skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
     previewUrl: "https://lacapsule-hackatweet-frontend.vercel.app/",
     codeUrl: "https://github.com/vinesk/lacapsule-hackatweet-frontend",
-  },
-  {
-    id: uuidv4(),
-    title: "Morning News",
-    description:
-      "Morning News est une application web qui affiche les dernières actualités de TechCrunch via NewsAPI. Les utilisateurs peuvent s'inscrire, se connecter et sauvegarder leurs articles préférés.",
-    image:
-      "https://raw.githubusercontent.com/vinesk/lacapsule-morningnews-frontend/refs/heads/main/public/morningnews.png",
-    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
-    previewUrl: "https://lacapsule-morningnews-frontend.vercel.app/",
-    codeUrl: "https://github.com/vinesk/lacapsule-morningnews-frontend",
   },
 
   {
