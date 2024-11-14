@@ -22,25 +22,17 @@ export const projects: Project[] = [
     previewUrl: "https://morning-news-vinesk.vercel.app/",
     codeUrl: "https://github.com/vinesk/morning-news",
   },
-  // {
-  //   id: uuidv4(),
-  //   title: "Fashion E-Commerce",
-  //   description:
-  //     "Fashion E-Commerce est une application web complète qui permet aux utilisateurs de parcourir et d'acheter des vêtements en ligne, avec une interface d'administration dédiée.",
-  //   image:
-  //     "https://raw.githubusercontent.com/vinesk/e-commerce-frontend/refs/heads/main/public/ecommerce.png",
-  //   skills: [
-  //     "React",
-  //     "Vite",
-  //     "Redux",
-  //     "Node.js",
-  //     "Express",
-  //     "MongoDB",
-  //     "Tailwind CSS",
-  //   ],
-  //   previewUrl: "https://e-commerce-frontend-uydm.onrender.com/",
-  //   codeUrl: "https://github.com/vinesk/e-commerce-frontend",
-  // },
+  {
+    id: uuidv4(),
+    title: "Memory Game",
+    description:
+      "Memory Game est une application web React qui met en œuvre le jeu classique de correspondance de cartes. Les joueurs testent leur mémoire en retournant les cartes et en essayant de trouver les paires correspondantes.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/lacapsule-memorygame/refs/heads/main/public/memorygame.png",
+    skills: ["React", "Next.js"],
+    previewUrl: "https://memory-game-vinesk.vercel.app",
+    codeUrl: "https://github.com/vinesk/memory-game",
+  },
   {
     id: uuidv4(),
     title: "Banking App",
@@ -83,16 +75,5 @@ export const projects: Project[] = [
     skills: ["React", "Next.js", "Node.js", "Express"],
     previewUrl: "https://lacapsule-mymoviz-frontend.vercel.app/",
     codeUrl: "https://github.com/vinesk/lacapsule-mymoviz-frontend",
-  },
-  {
-    id: uuidv4(),
-    title: "Memory Game",
-    description:
-      "Memory Game est une application web React qui met en œuvre le jeu classique de correspondance de cartes. Les joueurs testent leur mémoire en retournant les cartes et en essayant de trouver les paires correspondantes.",
-    image:
-      "https://raw.githubusercontent.com/vinesk/lacapsule-memorygame/refs/heads/main/public/memorygame.png",
-    skills: ["React", "Next.js"],
-    previewUrl: "https://lacapsule-memorygame.vercel.app/",
-    codeUrl: "https://github.com/vinesk/lacapsule-memorygame",
   },
 ];
