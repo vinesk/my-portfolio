@@ -43,6 +43,17 @@ export const projects: Project[] = [
   },
   {
     id: uuidv4(),
+    title: "Hack a Tweet",
+    description:
+      "Hack a Tweet est une application web qui reproduit les principales fonctionnalités de Twitter. Les utilisateurs peuvent s'inscrire, se connecter, publier des tweets et interagir avec le contenu des autres utilisateurs.",
+    image:
+      "https://github.com/vinesk/hackatweet/blob/main/frontend/public/hackatweet.png",
+    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
+    previewUrl: "https://hackatweet-vinesk.vercel.app/",
+    codeUrl: "https://github.com/vinesk/hackatweet",
+  },
+  {
+    id: uuidv4(),
     title: "Memory Game",
     description:
       "Memory Game est une application web React qui met en œuvre le jeu classique de correspondance de cartes. Les joueurs testent leur mémoire en retournant les cartes et en essayant de trouver les paires correspondantes.",
@@ -52,27 +63,15 @@ export const projects: Project[] = [
     previewUrl: "https://memory-game-vinesk.vercel.app",
     codeUrl: "https://github.com/vinesk/memory-game",
   },
-  {
-    id: uuidv4(),
-    title: "Hack a Tweet",
-    description:
-      "Hack a Tweet est une application web qui reproduit les principales fonctionnalités de Twitter. Les utilisateurs peuvent s'inscrire, se connecter, publier des tweets et interagir avec le contenu des autres utilisateurs.",
-    image:
-      "https://raw.githubusercontent.com/vinesk/lacapsule-hackatweet-frontend/refs/heads/main/public/hackatweet.png",
-    skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
-    previewUrl: "https://lacapsule-hackatweet-frontend.vercel.app/",
-    codeUrl: "https://github.com/vinesk/lacapsule-hackatweet-frontend",
-  },
-
-  {
-    id: uuidv4(),
-    title: "My Moviz",
-    description:
-      "My Moviz est une application web qui affiche les dernières sorties de films. Les utilisateurs peuvent ajouter des films à leurs favoris, gérer un compteur de vues et évaluer chaque film présenté.",
-    image:
-      "https://raw.githubusercontent.com/vinesk/lacapsule-mymoviz-frontend/refs/heads/main/public/mymoviz.png",
-    skills: ["React", "Next.js", "Node.js", "Express"],
-    previewUrl: "https://lacapsule-mymoviz-frontend.vercel.app/",
-    codeUrl: "https://github.com/vinesk/lacapsule-mymoviz-frontend",
-  },
+  // {
+  //   id: uuidv4(),
+  //   title: "My Moviz",
+  //   description:
+  //     "My Moviz est une application web qui affiche les dernières sorties de films. Les utilisateurs peuvent ajouter des films à leurs favoris, gérer un compteur de vues et évaluer chaque film présenté.",
+  //   image:
+  //     "https://raw.githubusercontent.com/vinesk/lacapsule-mymoviz-frontend/refs/heads/main/public/mymoviz.png",
+  //   skills: ["React", "Next.js", "Node.js", "Express"],
+  //   previewUrl: "https://lacapsule-mymoviz-frontend.vercel.app/",
+  //   codeUrl: "https://github.com/vinesk/lacapsule-mymoviz-frontend",
+  // },
 ];
