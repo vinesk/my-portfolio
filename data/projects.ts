@@ -13,6 +13,25 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: uuidv4(),
+    title: "Horizon",
+    description:
+      "Horizon est une application web qui permet aux utilisateurs de connecter leurs comptes bancaires et d'effectuer des transferts d'argent en toute sécurité.",
+    image:
+      "https://raw.githubusercontent.com/vinesk/horizon/main/public/horizon.png",
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Appwrite",
+      "Plaid",
+      "Dwolla",
+      "Sentry",
+    ],
+    previewUrl: "https://horizon-vinesk.vercel.app/",
+    codeUrl: "https://github.com/vinesk/horizon",
+  },
+  {
+    id: uuidv4(),
     title: "Morning News",
     description:
       "Morning News est une application web qui affiche les dernières actualités de TechCrunch via NewsAPI. Les utilisateurs peuvent s'inscrire, se connecter et sauvegarder leurs articles préférés.",
@@ -33,26 +52,6 @@ export const projects: Project[] = [
     previewUrl: "https://memory-game-vinesk.vercel.app",
     codeUrl: "https://github.com/vinesk/memory-game",
   },
-  {
-    id: uuidv4(),
-    title: "Banking App",
-    description:
-      "Banking App est une application web qui permet aux utilisateurs de connecter leurs comptes bancaires et d'effectuer des transferts d'argent en toute sécurité.",
-    image:
-      "https://raw.githubusercontent.com/vinesk/banking/refs/heads/main/public/banking.png",
-    skills: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Appwrite",
-      "Plaid",
-      "Dwolla",
-      "Sentry",
-    ],
-    previewUrl: "https://vinesk-banking.vercel.app/",
-    codeUrl: "https://github.com/vinesk/banking",
-  },
-
   {
     id: uuidv4(),
     title: "Hack a Tweet",
