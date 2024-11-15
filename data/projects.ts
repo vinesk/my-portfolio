@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description:
       "Hack a Tweet est une application web qui reproduit les principales fonctionnalités de Twitter. Les utilisateurs peuvent s'inscrire, se connecter, publier des tweets et interagir avec le contenu des autres utilisateurs.",
     image:
-      "https://github.com/vinesk/hackatweet/blob/main/frontend/public/hackatweet.png",
+      "https://raw.githubusercontent.com/vinesk/hackatweet/refs/heads/main/frontend/public/hackatweet.png",
     skills: ["React", "Next.js", "Redux", "Node.js", "Express", "MongoDB"],
     previewUrl: "https://hackatweet-vinesk.vercel.app/",
     codeUrl: "https://github.com/vinesk/hackatweet",
