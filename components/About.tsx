@@ -36,14 +36,14 @@ export default function About() {
               className="text-base sm:text-lg"
               onClick={() => window.open(about.cvUrl, "_blank")}
               aria-label="Télécharger le CV de Vincent Eskenazi"
-              variant="default"
+              variant="outline"
             >
-              <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
               Télécharger mon CV
+              <Download className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
             <Button
               size="lg"
-              variant="outline"
+              variant="default"
               className="text-base sm:text-lg"
               onClick={scrollToContact}
               aria-label="Me contacter"

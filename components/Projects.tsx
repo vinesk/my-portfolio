@@ -137,7 +137,7 @@ function ProjectCard({
               asChild
             >
               <Link href={project.previewUrl} target="_blank">
-                <Eye className="h-4 w-4" /> Aperçu
+                Aperçu <Eye className="h-4 w-4" />
               </Link>
             </Button>
           )}
@@ -149,7 +149,7 @@ function ProjectCard({
               asChild
             >
               <Link href={project.codeUrl} target="_blank">
-                <Code className="h-4 w-4" /> Code
+                Code <Code className="h-4 w-4" />
               </Link>
             </Button>
           )}
