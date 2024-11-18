@@ -32,7 +32,7 @@ export const experiences: Experience[] = [
     id: uuidv4(),
     title: "Intégrateur Web Freelance",
     company: "Le Figaro",
-    duration: "07/2020 – 12/2020",
+    duration: "07/2020 – 01/2021",
     description: ["Intégration de maquettes Figma"],
     icon: "le-figaro.png",
     type: "Freelance",
