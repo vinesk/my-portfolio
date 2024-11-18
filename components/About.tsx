@@ -63,7 +63,7 @@ export default function About() {
             <AvatarImage
               src={about.avatarSrc}
               alt={about.avatarAlt}
-              className="object-cover"
+              className="object-cover scale-[1.1] translate-y-[5%] translate-x-[5%]"
             />
             <AvatarFallback className="text-2xl sm:text-3xl md:text-4xl">
               {about.avatarFallback}
