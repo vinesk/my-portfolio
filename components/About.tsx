@@ -1,11 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
+import { Download, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { about } from "@/data/about";
 
 export default function About() {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    contactSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.section
       id="about"
@@ -25,15 +30,33 @@ export default function About() {
           <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-7 md:mb-8 max-w-3xl mx-auto lg:mx-0">
             {about.description}
           </p>
-          <Button
-            size="lg"
-            className="text-base sm:text-lg"
-            onClick={() => window.open(about.cvUrl, "_blank")}
-            aria-label="Télécharger le CV de Vincent Eskenazi"
-          >
-            <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
-            Télécharger CV
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <Button
+              size="lg"
+              className="text-base sm:text-lg"
+              onClick={() => window.open(about.cvUrl, "_blank")}
+              aria-label="Télécharger le CV de Vincent Eskenazi"
+              variant="default"
+            >
+              <Download className="mr-2 sm:mr-3 h-4 w-4 sm:h-5 sm:w-5" />
+              Télécharger mon CV
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-base sm:text-lg"
+              onClick={scrollToContact}
+              aria-label="Me contacter"
+            >
+              Me contacter
+              <motion.div
+                animate={{ y: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                <ArrowDown className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
+              </motion.div>
+            </Button>
+          </div>
         </div>
         <div className="w-full lg:w-1/3 xl:w-1/4 flex justify-center mb-6 lg:mb-0">
           <Avatar className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
